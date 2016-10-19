@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CategoriesTableViewController.h
 //  CulturEvents
 //
 //  Created by Vladimir Bolotov on 19.10.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CategoriesTableViewController : UITableViewController
 
 @end
-
