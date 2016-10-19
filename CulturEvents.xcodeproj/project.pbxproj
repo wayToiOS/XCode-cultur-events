@@ -58,8 +58,6 @@
 		BC097D121DB7E4FE004B55BB /* CulturEvents */ = {
 			isa = PBXGroup;
 			children = (
-				BC097D161DB7E4FE004B55BB /* AppDelegate.h */,
-				BC097D171DB7E4FE004B55BB /* AppDelegate.m */,
 				BC097D191DB7E4FE004B55BB /* ViewController.h */,
 				BC097D1A1DB7E4FE004B55BB /* ViewController.m */,
 				BC097D1C1DB7E4FF004B55BB /* Main.storyboard */,
@@ -74,6 +72,8 @@
 		BC097D131DB7E4FE004B55BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC097D161DB7E4FE004B55BB /* AppDelegate.h */,
+				BC097D171DB7E4FE004B55BB /* AppDelegate.m */,
 				BC097D141DB7E4FE004B55BB /* main.m */,
 			);
 			name = "Supporting Files";
