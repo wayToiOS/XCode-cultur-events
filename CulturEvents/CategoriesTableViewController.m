@@ -45,11 +45,8 @@
         NSArray *categories = [propertyListResults valueForKeyPath:@"message"];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.categories = categories;
-            
         });
     });
-    
-    
 }
 
 - (void) setCategories:(NSArray *)categories{
