@@ -7,6 +7,8 @@
 //
 
 #import "CategoriesTableViewController.h"
+#import "CultservFetcher.h"
+
 
 @interface CategoriesTableViewController ()
 
@@ -16,12 +18,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self fetchCategories];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+- (void)fetchCategories{
+    NSURL *url = [CultservFetcher URLforCategories];
+    
+    dispatch_queue_t fetchQ = dispatch_queue_create("categories fetcher", NULL);
+    dispatch_async(fetchQ, ^{
+        NSError *error = nil;
+        
+        NSData *jsonResults = [NSData dataWithContentsOfURL:url options:0 error: &error];
+        
+        
+        NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults
+                                                                            options:0
+                                                                              error:NULL];
+        
+        NSArray *categories = [propertyListResults valueForKeyPath:@"message"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.categories = categories;
+            
+        });
+    });
+    
+    
+}
+
+- (void) setCategories:(NSArray *)categories{
+    _categories = categories;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +64,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    //return the number of sections
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    //return the number of rows
+    return [self.categories count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"
+                                                            forIndexPath:indexPath];
     
     // Configure the cell...
+    NSDictionary *category = self.categories[indexPath.row];
+    cell.textLabel.text = [category valueForKeyPath:@"title"];
+    cell.detailTextLabel.text = [[category valueForKeyPath:@"events_count"] stringValue];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

@@ -11,7 +11,7 @@
 @interface CultservFetcher : NSObject
 
 
-+(NSURL *)URLforCategories;
-+(NSURL *)URLforEventsInCategory:(int)categoryId;
++ (NSURL *)URLforCategories;
++ (NSURL *)URLforEventsInCategory:(int)categoryId;
 
 @end

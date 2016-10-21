@@ -16,16 +16,16 @@
 
 + (NSURL *)URLForQuery:(NSString *)query
 {
-    query = [NSString stringWithFormat:@"%@%@&session=%@", CULTSETV_SERVER, query, CULTSERV_SESSION];
+    query = [NSString stringWithFormat:@"%@%@session=%@", CULTSETV_SERVER, query, CULTSERV_SESSION];
     return [NSURL URLWithString:query];
 }
 
-+(NSURL *)URLforCategories{
++ (NSURL *)URLforCategories{
     return [self URLForQuery:[NSString stringWithFormat:@"v4/categories/list?"]];
 }
 
-+(NSURL *)URLforEventsInCategory:(int)categoryId{
-    return [self URLForQuery:[NSString stringWithFormat:@"v4/events/list?category_id=%d", categoryId]];
++ (NSURL *)URLforEventsInCategory:(int)categoryId{
+    return [self URLForQuery:[NSString stringWithFormat:@"v4/events/list?category_id=%d&", categoryId]];
 }
 
 @end

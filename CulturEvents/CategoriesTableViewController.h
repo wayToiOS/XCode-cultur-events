@@ -10,4 +10,7 @@
 
 @interface CategoriesTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSArray *categories;
+
+
 @end
