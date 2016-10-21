@@ -9,6 +9,7 @@
 #import "CategoryEventsTVC.h"
 #import "EventTableViewCell.h"
 #import "CultservFetcher.h"
+#import "SubeventViewController.h"
 
 
 @interface CategoryEventsTVC ()
@@ -118,14 +119,30 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
+
+- (void)prepareVC:(SubeventViewController *)vc toDisplaySubeventForEvent:(NSDictionary *)event {
+    vc.subeventURL = [CultservFetcher URLforSubeventDescription: [[event valueForKeyPath:@"id"] intValue]];
+    vc.subeventImageURL = [CultservFetcher URLForImage: [event valueForKeyPath:@"subevents.image"][0]];
+    vc.title = [event valueForKeyPath:@"subevents.date"][0];
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"ShowSubevent"]) {
+                if ([segue.destinationViewController isKindOfClass:[SubeventViewController class]]) {
+                    [self prepareVC:segue.destinationViewController
+           toDisplaySubeventForEvent:self.events[indexPath.row]];
+                }
+            }
+        }
+    }
 }
-*/
 
 @end

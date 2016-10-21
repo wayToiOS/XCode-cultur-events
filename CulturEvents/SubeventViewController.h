@@ -10,4 +10,10 @@
 
 @interface SubeventViewController : UIViewController
 
+@property (nonatomic, strong) NSURL *subeventURL;
+@property (nonatomic, strong) NSURL *subeventImageURL;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextView *subeventDescription;
+
+
 @end

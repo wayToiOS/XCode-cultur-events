@@ -70,8 +70,6 @@
 		BC097D121DB7E4FE004B55BB /* CulturEvents */ = {
 			isa = PBXGroup;
 			children = (
-				BC62B9A61DB921A900CD444E /* CultservFetcher.h */,
-				BC62B9A71DB921A900CD444E /* CultservFetcher.m */,
 				BC097D301DB7E9E0004B55BB /* CategoriesTableViewController.h */,
 				BC097D311DB7E9E0004B55BB /* CategoriesTableViewController.m */,
 				BC5C71A81DBA566F0075A137 /* CategoryEventsTVC.h */,
@@ -84,6 +82,7 @@
 				BC097D1F1DB7E4FF004B55BB /* Assets.xcassets */,
 				BC097D211DB7E4FF004B55BB /* LaunchScreen.storyboard */,
 				BC097D241DB7E4FF004B55BB /* Info.plist */,
+				BC5C71B11DBAAA2F0075A137 /* Model */,
 				BC097D131DB7E4FE004B55BB /* Supporting Files */,
 			);
 			path = CulturEvents;
@@ -97,6 +96,15 @@
 				BC097D141DB7E4FE004B55BB /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC5C71B11DBAAA2F0075A137 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC62B9A61DB921A900CD444E /* CultservFetcher.h */,
+				BC62B9A71DB921A900CD444E /* CultservFetcher.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

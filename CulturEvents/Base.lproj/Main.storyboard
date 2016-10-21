@@ -94,6 +94,7 @@
                                     <outlet property="eventDateLabel" destination="Oji-JO-k4o" id="rbh-cw-1rC"/>
                                     <outlet property="eventImageView" destination="UhR-SB-fpL" id="exi-gi-OWS"/>
                                     <outlet property="eventTextLabel" destination="eVZ-Cn-Egg" id="IbX-DU-QiZ"/>
+                                    <segue destination="0UQ-If-G7p" kind="show" id="E9W-wr-2gs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,7 +106,42 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHC-7w-84N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242.5" y="121.47887323943662"/>
+            <point key="canvasLocation" x="2265" y="121"/>
+        </scene>
+        <!--Subevent View Controller-->
+        <scene sceneID="lm1-hI-wwS">
+            <objects>
+                <viewController id="0UQ-If-G7p" customClass="SubeventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eTA-5b-p8s"/>
+                        <viewControllerLayoutGuide type="bottom" id="5kt-Ye-xQa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PqO-50-fyK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="osb-Cv-cE5">
+                                <frame key="frameInset" minY="64" width="320" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCU-yv-5YD">
+                                <frame key="frameInset" minY="312" width="320" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="osb-Cv-cE5" id="LzM-bN-J9s"/>
+                        <outlet property="subeventDescription" destination="RCU-yv-5YD" id="d4s-b2-oVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iBV-El-W2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Os-Q6-TLD">

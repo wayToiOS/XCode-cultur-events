@@ -12,6 +12,7 @@
 #define CULTSERV_SESSION @"sesson_iphone_2015_ponominalu_msk"
 #define CULTSERV_IMAGE_SERVER @"http://media.cultserv.ru/i/"
 #define CULTSERV_IMAGE_SIZE_SMALL @"55x55/"
+#define CULTSERV_IMAGE_SIZE_FULL @"320x240/"
 
 @implementation CultservFetcher
 
@@ -30,6 +31,10 @@
     return [self URLForQuery:[NSString stringWithFormat:@"v4/events/list?category_id=%d&", categoryId]];
 }
 
++ (NSURL *)URLforSubeventDescription:(int)subeventId{
+    return [self URLForQuery:[NSString stringWithFormat:@"v4/subevents/description/get?id=%d&", subeventId]];
+}
+
 
 + (NSURL *)URLforImageQuery:(NSString *)query withSize:(NSString *)size{
     query = [NSString stringWithFormat:@"%@%@%@", CULTSERV_IMAGE_SERVER, size, query];
@@ -38,6 +43,10 @@
 
 + (NSURL *)URLForSmallImage:(NSString *)image{
     return [self URLforImageQuery:image withSize:CULTSERV_IMAGE_SIZE_SMALL];
+}
+
++ (NSURL *)URLForImage:(NSString *)image{
+    return [self URLforImageQuery:image withSize:CULTSERV_IMAGE_SIZE_FULL];
 }
 
 @end

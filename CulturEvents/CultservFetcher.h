@@ -13,5 +13,8 @@
 
 + (NSURL *)URLforCategories;
 + (NSURL *)URLforEventsInCategory:(int)categoryId;
++ (NSURL *)URLforSubeventDescription:(int)subeventId;
+
 + (NSURL *)URLForSmallImage:(NSString *)image;
++ (NSURL *)URLForImage:(NSString *)image;
 @end
