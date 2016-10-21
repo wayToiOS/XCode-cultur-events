@@ -8,15 +8,17 @@
 
 #import "CultservFetcher.h"
 
-#define CULTSETV_SERVER @"https://api.cultserv.ru/"
+#define CULTSERV_SERVER @"https://api.cultserv.ru/"
 #define CULTSERV_SESSION @"sesson_iphone_2015_ponominalu_msk"
+#define CULTSERV_IMAGE_SERVER @"http://media.cultserv.ru/i/"
+#define CULTSERV_IMAGE_SIZE_SMALL @"55x55/"
 
 @implementation CultservFetcher
 
 
 + (NSURL *)URLForQuery:(NSString *)query
 {
-    query = [NSString stringWithFormat:@"%@%@session=%@", CULTSETV_SERVER, query, CULTSERV_SESSION];
+    query = [NSString stringWithFormat:@"%@%@session=%@", CULTSERV_SERVER, query, CULTSERV_SESSION];
     return [NSURL URLWithString:query];
 }
 
@@ -29,6 +31,13 @@
 }
 
 
++ (NSURL *)URLforImageQuery:(NSString *)query withSize:(NSString *)size{
+    query = [NSString stringWithFormat:@"%@%@%@", CULTSERV_IMAGE_SERVER, size, query];
+    return [NSURL URLWithString:query];
+}
 
++ (NSURL *)URLForSmallImage:(NSString *)image{
+    return [self URLforImageQuery:image withSize:CULTSERV_IMAGE_SIZE_SMALL];
+}
 
 @end

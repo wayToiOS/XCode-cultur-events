@@ -13,6 +13,8 @@
 @interface EventTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) NSURL *eventImageURL;
+@property (weak, nonatomic)  NSString *eventDate;
+
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 @property (weak, nonatomic) IBOutlet UILabel *eventTextLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;

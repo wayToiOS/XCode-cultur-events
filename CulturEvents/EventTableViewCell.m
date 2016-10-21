@@ -19,6 +19,28 @@
     [self startDownloadEventImage];
 }
 
+- (UIImage *)image
+{
+    return self.imageView.image;
+}
+
+- (void)setImage:(UIImage *)image{
+    self.eventImageView.image = image;
+}
+
+- (void)setEventDate:(NSString *)eventDate{
+    
+    
+    // Convert string to date object
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    NSDate *date = [dateFormat dateFromString:eventDate];
+    
+    // Convert date object to desired output format
+    [dateFormat setDateFormat:@"dd MMM HH:mm"];
+    eventDate = [dateFormat stringFromDate:date];
+    self.eventDateLabel.text = eventDate;
+}
 
 - (void)startDownloadEventImage {
     self.image = nil;

@@ -8,6 +8,7 @@
 
 #import "CategoryEventsTVC.h"
 #import "EventTableViewCell.h"
+#import "CultservFetcher.h"
 
 
 @interface CategoryEventsTVC ()
@@ -75,7 +76,10 @@
     // Configure the cell...
     NSDictionary *event = self.events[indexPath.row];
     cell.eventTextLabel.text = [event valueForKeyPath:@"title"];
-    cell.eventDateLabel.text = [event valueForKeyPath:@"subevents.date"][0];
+    cell.eventDate = [event valueForKeyPath:@"subevents.date"][0];
+    NSString *img = [event valueForKeyPath:@"subevents.image"][0];
+    //NSLog(@" imageFile = %@", img);
+    cell.eventImageURL =  [CultservFetcher URLForSmallImage:img];
     return cell;
 }
 
