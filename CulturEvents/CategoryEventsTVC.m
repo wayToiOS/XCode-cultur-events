@@ -7,9 +7,10 @@
 //
 
 #import "CategoryEventsTVC.h"
+#import "EventTableViewCell.h"
+
 
 @interface CategoryEventsTVC ()
-
 @end
 
 @implementation CategoryEventsTVC
@@ -66,14 +67,15 @@
 }
 
 
+#define EVENT_REUSE_IDENTIFIER @"categoryEventsCell"
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoryEventsCell"
-                                                            forIndexPath:indexPath];
-    
+    EventTableViewCell *cell = (EventTableViewCell *)[tableView dequeueReusableCellWithIdentifier:EVENT_REUSE_IDENTIFIER
+                                                                                     forIndexPath:indexPath];
     // Configure the cell...
     NSDictionary *event = self.events[indexPath.row];
-    cell.textLabel.text = [event valueForKeyPath:@"title"];
-    //cell.detailTextLabel.text = [[event valueForKeyPath:@"events_count"] stringValue];
+    cell.eventTextLabel.text = [event valueForKeyPath:@"title"];
+    cell.eventDateLabel.text = [event valueForKeyPath:@"subevents.date"][0];
     return cell;
 }
 
