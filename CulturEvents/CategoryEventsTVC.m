@@ -1,60 +1,27 @@
 //
-//  CategoriesTableViewController.m
+//  CategoryEventsTVC.m
 //  CulturEvents
 //
-//  Created by Vladimir Bolotov on 19.10.16.
+//  Created by Vladimir Bolotov on 21.10.16.
 //  Copyright © 2016 Vladimir Bolotov. All rights reserved.
 //
 
-#import "CategoriesTableViewController.h"
-#import "CultservFetcher.h"
 #import "CategoryEventsTVC.h"
 
-
-@interface CategoriesTableViewController ()
+@interface CategoryEventsTVC ()
 
 @end
 
-@implementation CategoriesTableViewController
+@implementation CategoryEventsTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchCategories];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-
-- (void)fetchCategories{
-    NSURL *url = [CultservFetcher URLforCategories];
-    
-    dispatch_queue_t fetchQ = dispatch_queue_create("categories fetcher", NULL);
-    dispatch_async(fetchQ, ^{
-        NSError *error = nil;
-        
-        NSData *jsonResults = [NSData dataWithContentsOfURL:url options:0 error: &error];
-        
-        
-        NSDictionary *propertyListResults = [NSJSONSerialization JSONObjectWithData:jsonResults
-                                                                            options:0
-                                                                              error:NULL];
-        
-        NSArray *categories = [propertyListResults valueForKeyPath:@"message"];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.categories = categories;
-            
-        });
-    });
-    
-    
-}
-
-- (void) setCategories:(NSArray *)categories{
-    _categories = categories;
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,27 +32,24 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    //return the number of sections
-    return 1;
+#warning Incomplete implementation, return the number of sections
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //return the number of rows
-    return [self.categories count];
+#warning Incomplete implementation, return the number of rows
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"categoriesCell"
-                                                            forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
-    NSDictionary *category = self.categories[indexPath.row];
-    cell.textLabel.text = [category valueForKeyPath:@"title"];
-    cell.detailTextLabel.text = [[category valueForKeyPath:@"events_count"] stringValue];
     
     return cell;
 }
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -121,31 +85,14 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
-
-- (void)prepareTVC:(CategoryEventsTVC *)tvc toDisplayEventsInCategory:(NSDictionary *)category {
-    tvc.categoryEventsURL = [CultservFetcher URLforEventsInCategory: [[category valueForKeyPath:@"id"] intValue]];
-    tvc.title = [category valueForKeyPath:@"title"];
-}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([sender isKindOfClass:[UITableViewCell class]]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        if (indexPath) {
-            if ([segue.identifier isEqualToString:@"ShowCategoryEvents"]) {
-                if ([segue.destinationViewController isKindOfClass:[CategoryEventsTVC class]]) {
-                    [self prepareTVC:segue.destinationViewController
-           toDisplayEventsInCategory:self.categories[indexPath.row]];
-                }
-            }
-        }
-    }
-
 }
-
+*/
 
 @end

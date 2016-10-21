@@ -13,6 +13,7 @@
 		BC097D201DB7E4FF004B55BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC097D1F1DB7E4FF004B55BB /* Assets.xcassets */; };
 		BC097D231DB7E4FF004B55BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC097D211DB7E4FF004B55BB /* LaunchScreen.storyboard */; };
 		BC097D321DB7E9E0004B55BB /* CategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC097D311DB7E9E0004B55BB /* CategoriesTableViewController.m */; };
+		BC5C71AA1DBA566F0075A137 /* CategoryEventsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5C71A91DBA566F0075A137 /* CategoryEventsTVC.m */; };
 		BC62B9A81DB921A900CD444E /* CultservFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BC62B9A71DB921A900CD444E /* CultservFetcher.m */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		BC097D241DB7E4FF004B55BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC097D301DB7E9E0004B55BB /* CategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesTableViewController.h; sourceTree = "<group>"; };
 		BC097D311DB7E9E0004B55BB /* CategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesTableViewController.m; sourceTree = "<group>"; };
+		BC5C71A81DBA566F0075A137 /* CategoryEventsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryEventsTVC.h; sourceTree = "<group>"; };
+		BC5C71A91DBA566F0075A137 /* CategoryEventsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryEventsTVC.m; sourceTree = "<group>"; };
 		BC62B9A61DB921A900CD444E /* CultservFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultservFetcher.h; sourceTree = "<group>"; };
 		BC62B9A71DB921A900CD444E /* CultservFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultservFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +68,8 @@
 				BC62B9A71DB921A900CD444E /* CultservFetcher.m */,
 				BC097D301DB7E9E0004B55BB /* CategoriesTableViewController.h */,
 				BC097D311DB7E9E0004B55BB /* CategoriesTableViewController.m */,
+				BC5C71A81DBA566F0075A137 /* CategoryEventsTVC.h */,
+				BC5C71A91DBA566F0075A137 /* CategoryEventsTVC.m */,
 				BC097D1C1DB7E4FF004B55BB /* Main.storyboard */,
 				BC097D1F1DB7E4FF004B55BB /* Assets.xcassets */,
 				BC097D211DB7E4FF004B55BB /* LaunchScreen.storyboard */,
@@ -158,6 +163,7 @@
 			files = (
 				BC097D181DB7E4FE004B55BB /* AppDelegate.m in Sources */,
 				BC62B9A81DB921A900CD444E /* CultservFetcher.m in Sources */,
+				BC5C71AA1DBA566F0075A137 /* CategoryEventsTVC.m in Sources */,
 				BC097D151DB7E4FE004B55BB /* main.m in Sources */,
 				BC097D321DB7E9E0004B55BB /* CategoriesTableViewController.m in Sources */,
 			);
