@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "iphone5.png",
+      "filename" : "04 ponominalu.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iphone5-1.png",
+      "filename" : "04 ponominalu-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iphone5-2.png",
+      "filename" : "04 ponominalu-2.png",
       "scale" : "3x"
     }
   ],

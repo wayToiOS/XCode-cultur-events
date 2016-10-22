@@ -17,6 +17,7 @@
 		BC5C71AD1DBA63EA0075A137 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5C71AC1DBA63EA0075A137 /* EventTableViewCell.m */; };
 		BC5C71B01DBAA9960075A137 /* SubeventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5C71AF1DBAA9960075A137 /* SubeventViewController.m */; };
 		BC62B9A81DB921A900CD444E /* CultservFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BC62B9A71DB921A900CD444E /* CultservFetcher.m */; };
+		BCBC88551DBB60D000897CA7 /* 04 ponominalu.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBC88541DBB60D000897CA7 /* 04 ponominalu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		BC5C71AF1DBAA9960075A137 /* SubeventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubeventViewController.m; sourceTree = "<group>"; };
 		BC62B9A61DB921A900CD444E /* CultservFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultservFetcher.h; sourceTree = "<group>"; };
 		BC62B9A71DB921A900CD444E /* CultservFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultservFetcher.m; sourceTree = "<group>"; };
+		BCBC88541DBB60D000897CA7 /* 04 ponominalu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04 ponominalu.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				BC5C71AF1DBAA9960075A137 /* SubeventViewController.m */,
 				BC097D1C1DB7E4FF004B55BB /* Main.storyboard */,
 				BC097D1F1DB7E4FF004B55BB /* Assets.xcassets */,
+				BCBC88541DBB60D000897CA7 /* 04 ponominalu.png */,
 				BC097D211DB7E4FF004B55BB /* LaunchScreen.storyboard */,
 				BC097D241DB7E4FF004B55BB /* Info.plist */,
 				BC5C71B11DBAAA2F0075A137 /* Model */,
@@ -168,6 +171,7 @@
 			files = (
 				BC097D231DB7E4FF004B55BB /* LaunchScreen.storyboard in Resources */,
 				BC097D201DB7E4FF004B55BB /* Assets.xcassets in Resources */,
+				BCBC88551DBB60D000897CA7 /* 04 ponominalu.png in Resources */,
 				BC097D1E1DB7E4FF004B55BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

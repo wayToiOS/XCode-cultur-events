@@ -10,17 +10,30 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone5" id="PvH-W6-7FC">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage" translatesAutoresizingMaskIntoConstraints="NO" id="vNh-HX-aQd"/>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vNh-HX-aQd" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="212" id="C0O-d4-QZb"/>
+                            <constraint firstItem="vNh-HX-aQd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Zdd-Dl-gs2"/>
+                            <constraint firstItem="vNh-HX-aQd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cC9-RW-I4A"/>
+                            <constraint firstAttribute="trailing" secondItem="vNh-HX-aQd" secondAttribute="trailing" id="sgP-r8-6ND"/>
+                        </constraints>
+                    </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="iphone5" width="320" height="568"/>
+        <image name="launchImage" width="320" height="52"/>
     </resources>
 </document>
