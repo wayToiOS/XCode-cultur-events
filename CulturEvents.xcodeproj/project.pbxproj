@@ -17,6 +17,7 @@
 		BC5C71AD1DBA63EA0075A137 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5C71AC1DBA63EA0075A137 /* EventTableViewCell.m */; };
 		BC5C71B01DBAA9960075A137 /* SubeventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5C71AF1DBAA9960075A137 /* SubeventViewController.m */; };
 		BC62B9A81DB921A900CD444E /* CultservFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BC62B9A71DB921A900CD444E /* CultservFetcher.m */; };
+		BCAD00EF1DBBD01F007973E6 /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAD00EE1DBBD01F007973E6 /* LaunchScreenViewController.m */; };
 		BCBC88551DBB60D000897CA7 /* 04 ponominalu.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBC88541DBB60D000897CA7 /* 04 ponominalu.png */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		BC5C71AF1DBAA9960075A137 /* SubeventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubeventViewController.m; sourceTree = "<group>"; };
 		BC62B9A61DB921A900CD444E /* CultservFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CultservFetcher.h; sourceTree = "<group>"; };
 		BC62B9A71DB921A900CD444E /* CultservFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CultservFetcher.m; sourceTree = "<group>"; };
+		BCAD00ED1DBBD01F007973E6 /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
+		BCAD00EE1DBBD01F007973E6 /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
 		BCBC88541DBB60D000897CA7 /* 04 ponominalu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04 ponominalu.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +75,8 @@
 		BC097D121DB7E4FE004B55BB /* CulturEvents */ = {
 			isa = PBXGroup;
 			children = (
+				BCAD00ED1DBBD01F007973E6 /* LaunchScreenViewController.h */,
+				BCAD00EE1DBBD01F007973E6 /* LaunchScreenViewController.m */,
 				BC097D301DB7E9E0004B55BB /* CategoriesTableViewController.h */,
 				BC097D311DB7E9E0004B55BB /* CategoriesTableViewController.m */,
 				BC5C71A81DBA566F0075A137 /* CategoryEventsTVC.h */,
@@ -184,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC097D181DB7E4FE004B55BB /* AppDelegate.m in Sources */,
+				BCAD00EF1DBBD01F007973E6 /* LaunchScreenViewController.m in Sources */,
 				BC62B9A81DB921A900CD444E /* CultservFetcher.m in Sources */,
 				BC5C71B01DBAA9960075A137 /* SubeventViewController.m in Sources */,
 				BC5C71AD1DBA63EA0075A137 /* EventTableViewCell.m in Sources */,
