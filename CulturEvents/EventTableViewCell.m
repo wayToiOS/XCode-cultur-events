@@ -14,23 +14,9 @@
 
 @implementation EventTableViewCell
 
-- (void)setEventImageURL:(NSURL *)eventImageURL {
-    _eventImageURL = eventImageURL;
-    [self startDownloadEventImage];
-}
-
-- (UIImage *)image
-{
-    return self.imageView.image;
-}
-
-- (void)setImage:(UIImage *)image{
-    self.eventImageView.image = image;
-}
+# pragma mark - date and time formatting
 
 - (void)setEventDate:(NSString *)eventDate{
-    
-    
     // Convert string to date object
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
@@ -40,6 +26,21 @@
     [dateFormat setDateFormat:@"dd MMM HH:mm"];
     eventDate = [dateFormat stringFromDate:date];
     self.eventDateLabel.text = eventDate;
+}
+
+# pragma mark - image
+
+- (void)setEventImageURL:(NSURL *)eventImageURL {
+    _eventImageURL = eventImageURL;
+    [self startDownloadEventImage];
+}
+
+- (UIImage *)image {
+    return self.imageView.image;
+}
+
+- (void)setImage:(UIImage *)image {
+    self.eventImageView.image = image;
 }
 
 - (void)startDownloadEventImage {

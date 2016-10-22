@@ -19,39 +19,32 @@
     [super viewDidLoad];
     [self startDownloadEventImage];
     [self fetchDescription];
+}
+
+# pragma mark - date and time formatting
+
+- (void)setSubeventDateAndTime:(NSString *)subeventDateAndTime{
+    // Convert string to date object
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    NSDate *date = [dateFormat dateFromString:subeventDateAndTime];
     
-    // Do any additional setup after loading the view.
+    // Convert date object to desired output format
+    [dateFormat setDateFormat:@"dd MMMM HH:mm"];
+    subeventDateAndTime = [dateFormat stringFromDate:date];
+    self.title = subeventDateAndTime;
 }
 
-//- (void)setSubeventImageURL:(NSURL *)subeventImageURL {
-//    _subeventImageURL = subeventImageURL;
-//    
-//}
+# pragma mark - image
 
-- (UIImage *)image
-{
-    return self.imageView.image;
-}
-
-- (void)setImage:(UIImage *)image{
+- (void)setImage:(UIImage *)image {
     self.imageView.image = image;
-}
-
-- (NSString *)descriptionText
-{
-    return self.subeventDescription.text;
-}
-
-- (void)setDescriptionText:(NSString *)descriptionText{
-    self.subeventDescription.text = descriptionText;
 }
 
 - (void)startDownloadEventImage {
     self.image = nil;
-    
     if (self.subeventImageURL)
     {
-        
         NSURLRequest *request = [NSURLRequest requestWithURL:self.subeventImageURL];
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration ephemeralSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -69,7 +62,17 @@
     }
 }
 
-- (void)fetchDescription{
+
+# pragma mark - description
+
+- (void)setDescriptionText:(NSString *)descriptionText {
+    UIFont *systemFont =[UIFont systemFontOfSize:16.0f];
+    NSAttributedString *attrStr  = [[NSAttributedString alloc] initWithData:[descriptionText dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+    self.subeventDescription.attributedText = attrStr;
+    self.subeventDescription.font = systemFont;
+}
+
+- (void)fetchDescription {
     dispatch_queue_t fetchQDescription = dispatch_queue_create("description fetcher", NULL);
     dispatch_async(fetchQDescription, ^{
         NSError *error = nil;
@@ -93,15 +96,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Categories Table View Controller-->
+        <!--Все категории-->
         <scene sceneID="KAU-LM-XTM">
             <objects>
                 <tableViewController id="Rq7-1s-qXL" customClass="CategoriesTableViewController" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                             <outlet property="delegate" destination="Rq7-1s-qXL" id="97E-uF-56T"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9oQ-G3-uPL"/>
+                    <navigationItem key="navigationItem" title="Все категории" id="9oQ-G3-uPL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmV-UK-6TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +94,7 @@
                                     <outlet property="eventDateLabel" destination="Oji-JO-k4o" id="rbh-cw-1rC"/>
                                     <outlet property="eventImageView" destination="UhR-SB-fpL" id="exi-gi-OWS"/>
                                     <outlet property="eventTextLabel" destination="eVZ-Cn-Egg" id="IbX-DU-QiZ"/>
-                                    <segue destination="0UQ-If-G7p" kind="show" id="E9W-wr-2gs"/>
+                                    <segue destination="0UQ-If-G7p" kind="show" identifier="ShowSubevent" id="E9W-wr-2gs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -124,7 +124,7 @@
                                 <frame key="frameInset" minY="64" width="320" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCU-yv-5YD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npQ-Ko-R3u">
                                 <frame key="frameInset" minY="312" width="320" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,12 +136,12 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="osb-Cv-cE5" id="LzM-bN-J9s"/>
-                        <outlet property="subeventDescription" destination="RCU-yv-5YD" id="d4s-b2-oVd"/>
+                        <outlet property="subeventDescription" destination="npQ-Ko-R3u" id="n2Y-TA-kKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBV-El-W2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="121"/>
+            <point key="canvasLocation" x="3024.375" y="120.4225352112676"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Os-Q6-TLD">
